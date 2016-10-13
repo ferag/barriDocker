@@ -2,10 +2,6 @@ FROM ubuntu:14.04
 
 MAINTAINER Fernando Aguilar <aguilarf@ifca.unican.es>
 
-FROM ubuntu:14.04
-
-MAINTAINER Marica Antonacci <marica.antonacci@gmail.com>
-
 RUN apt-get update
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install subversion libtool libltdl7 libltdl-dev libexpat1-dev gcc gfortran g++ mpich byacc flex openssl ruby libreadline6-dev libnetcdf-dev autoconf automake autotools-dev make wget  && \
