@@ -33,5 +33,5 @@ RUN svn checkout https://svn.oss.deltares.nl/repos/delft3d/tags/6075/src delft3d
     sed -i "s/-lfmpich -lmpich -lmpl/-lmpich -lmpl/" delft3d_repository/src/build.sh && \ 
     cat delft3d_repository/src/build.sh | grep ds-install && \
     delft3d_repository/src/build.sh -gnu -64bit -debug && \
-    cp delft3d_repository/src/engines_gpl/waq/default/* /delft3d_repository/bin/lnx64/waq/default/ \
+    cp delft3d_repository/src/engines_gpl/waq/default/* /delft3d_repository/bin/lnx64/waq/default/ && \
     rm -rf delft3d_repository/src
