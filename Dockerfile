@@ -1,4 +1,4 @@
-FROM indigodatacloud/ubuntu-sshd:14.04
+FROM indigodatacloud/ubuntu-sshd:16.04
 
 MAINTAINER Fernando Aguilar <aguilarf@ifca.unican.es>
 
