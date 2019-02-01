@@ -22,7 +22,7 @@ RUN cd netcdf-fortran-4.4.3 && ./configure --disable-netcdf-4 --prefix=/usr && m
 ENV NETCDF_LIBS -I/usr/lib
 ENV NETCDF_CFLAGS -I/usr/include
 
-RUN svn checkout https://svn.oss.deltares.nl/repos/delft3d/tags/6075/src delft3d_repository/src --username ferag.x --password indigo && \
+RUN svn checkout https://svn.oss.deltares.nl/repos/delft3d/tags/delft3d4/7545/src delft3d_repository/src --username ferag.x --password indigo && \
     sed -i "s/addpath PATH \/opt\/mpich2-1.4.1-gcc-4.6.2\/bin/addpath PATH \/usr\/bin/" delft3d_repository/src/build.sh && \
     sed -i "s/export MPI_INCLUDE=\/opt\/mpich2-1.4.1-gcc-4.6.2\/include/export MPI_INCLUDE=\/usr\/include/" delft3d_repository/src/build.sh && \
     sed -i "s/export MPILIBS_ADDITIONAL=\"-L\/opt\/mpich2-1.4.1-gcc-4.6.2\/lib -lfmpich -lmpich -lmpl\"/export MPILIBS_ADDITIONAL=\"-L\/usr\/lib -lfmpich -lmpich -lmpl\"/" delft3d_repository/src/build.sh && \
