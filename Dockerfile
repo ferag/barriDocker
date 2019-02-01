@@ -4,7 +4,7 @@ MAINTAINER Fernando Aguilar <aguilarf@ifca.unican.es>
 
 RUN apt-get update
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install subversion libtool libltdl7 libltdl-dev libexpat1-dev gcc gfortran g++ mpich byacc flex openssl ruby libreadline6-dev libnetcdf-dev autoconf automake autotools-dev make wget  && \
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install subversion libtool libltdl7 libltdl-dev libexpat1-dev gcc gfortran g++ mpich byacc flex openssl ruby libreadline6-dev libnetcdf-dev autoconf automake autotools-dev make wget uuid-dev && \
     rm -rf /var/lib/apt/lists/* 
 
 RUN wget ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4.4.0.tar.gz && \
