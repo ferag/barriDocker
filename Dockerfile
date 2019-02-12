@@ -35,3 +35,11 @@ RUN svn checkout https://svn.oss.deltares.nl/repos/delft3d/tags/delft3d4/7545/sr
     delft3d_repository/src/build.sh -gnu -64bit -debug && \
     ls /delft3d_repository/src/engines_gpl/waq/default/ > ls.txt && \
     cp /delft3d_repository/src/engines_gpl/waq/default/* /delft3d_repository/bin/lnx64/waq/default/
+
+RUN exec 3<> /etc/apt/sources.list.d/onedata.list && \
+    echo "deb [arch=amd64] http://packages.onedata.org/apt/ubuntu/xenial xenial main" >&3 && \
+    echo "deb-src [arch=amd64] http://packages.onedata.org/apt/ubuntu/xenial xenial main" >&3 && \
+    exec 3>&-
+RUN curl http://packages.onedata.org/onedata.gpg.key | apt-key add -
+RUN apt-get update && curl http://packages.onedata.org/onedata.gpg.key | apt-key add -
+RUN apt-get install sudo oneclient -y
