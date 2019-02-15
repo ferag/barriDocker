@@ -40,6 +40,5 @@ RUN exec 3<> /etc/apt/sources.list.d/onedata.list && \
     echo "deb [arch=amd64] http://packages.onedata.org/apt/ubuntu/xenial xenial main" >&3 && \
     echo "deb-src [arch=amd64] http://packages.onedata.org/apt/ubuntu/xenial xenial main" >&3 && \
     exec 3>&-
-RUN curl http://packages.onedata.org/onedata.gpg.key | apt-key add -
-RUN apt-get update && curl http://packages.onedata.org/onedata.gpg.key | apt-key add -
+RUN apt-get update
 RUN apt-get install sudo oneclient -y
