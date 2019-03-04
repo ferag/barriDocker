@@ -41,4 +41,4 @@ RUN exec 3<> /etc/apt/sources.list.d/onedata.list && \
     echo "deb-src [arch=amd64] http://packages.onedata.org/apt/ubuntu/xenial xenial main" >&3 && \
     exec 3>&-
 RUN apt-get update
-RUN apt-get install sudo oneclient --allow-unauthenticated -y
+RUN apt-get install sudo oneclient curl --allow-unauthenticated -y
