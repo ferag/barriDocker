@@ -37,8 +37,8 @@ RUN svn checkout https://svn.oss.deltares.nl/repos/delft3d/tags/delft3d4/7545/sr
     cp /delft3d_repository/src/engines_gpl/waq/default/* /delft3d_repository/bin/lnx64/waq/default/
 
 RUN exec 3<> /etc/apt/sources.list.d/onedata.list && \
-    echo "deb [arch=amd64] http://packages.onedata.org/apt/ubuntu/xenial xenial main" >&3 && \
-    echo "deb-src [arch=amd64] http://packages.onedata.org/apt/ubuntu/xenial xenial main" >&3 && \
+    echo "deb [arch=amd64] http://packages.onedata.org/apt/ubuntu/1902 xenial main" >&3 && \
+    echo "deb-src [arch=amd64] http://packages.onedata.org/apt/ubuntu/1902 xenial main" >&3 && \
     exec 3>&-
 RUN apt-get update
 RUN apt-get install sudo oneclient curl --allow-unauthenticated -y
